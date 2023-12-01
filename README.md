@@ -2,11 +2,11 @@
 
 ![Photo](photo.jpg)
 
-These sketches are to be uploaded into a contraption built with two Arduino boards (master and slave).
-Once you constructed it and uploaded sketches, it will control you lamp every day based on specific daytime.
-Say, you set day to begin at 7:00 and end at 22:00, and morning/evening duration to 60 min.
-Then, this thing will lamp at 0% power till 7:00, then during 60 minutes (up to 8:00) it will slowly raise lamp power up to 100%.
-When day is over at 22:00, it will slowly lower lamp power for another 60 minutes, until it reaches 0% again at 23:00.
+These sketches are to be uploaded into a contraption built using two Arduino boards (master and slave).
+Once you constructed it and uploaded sketches, it will control your lamp every day based on specific daytime.
+Say, you set "day" to begin at 7:00 and end at 22:00, and morning/evening "duration" to 60 min.
+Then, this thing will hold your lamp at 0% power till 7:00, then during 60 minutes (up to 8:00) it will slowly raise lamp power up to 100%.
+When the "day" is over at 22:00, it will slowly lower lamp power for another 60 minutes, until it reaches 0% again at 23:00.
 
 ## Bill of materials
 
@@ -28,12 +28,12 @@ Install Nano board into the carrier.
 Connect dimmer terminals to input and output 110/220V sockets.
 Input socket shall be connected to wall outlet, and output one could be used to connect the lamp to be controlled.
 Be sure you connect the lamp that is dimmable!
-Incandescent bulbs are perfect, although there are few cold cathode or LED lamps that support this too. Check notes on lamp'sd package prior to buying it.
+Incandescent bulbs are perfect, although there are few cold cathode or LED lamps that support this too. Check notes on lamp's package prior to buying it.
 
 Connect at least one pair of 5V and GND pins on Arduino Mega to corresponding pins on Nano carrier.
 You may connect not a single pair, but two or three 5V/GND pairs to reduce voltage drop between Mega and Nano.
 
-For DS1302 board, display, joystick, and dimmer, connect VCC and GND to corresponding pins on Nano carrier or Mega.
+For DS1302 board, display, joystick, and dimmer, connect theirs VCC and GND to corresponding pins on Nano carrier or Mega.
 
 ### Signal connections
 
@@ -45,7 +45,9 @@ For DS1302 board, display, joystick, and dimmer, connect VCC and GND to correspo
 
 The last connection is required for data exchange (TTL UART) between Mega nad Nano.
 
-## Building
+If you edit the code, you may change some of these pins, as well as let this contraption be built based on different hardware.
+
+## Building and uploading sketches
 
 Install required libraries into your Arduino IDE: DS1302, Adafruit_SSD1306, and [RBDDimmer](https://github.com/RobotDynOfficial/RBDDimmer).
 
@@ -62,4 +64,3 @@ Use joystick to set up the values.
 Single press lets you enter the setup mode.
 In this mode you can move joystick left or right to select a value to modify, and up or down to adjust it.
 When you're done, press joystick again to activate new values (and save them to EEPROM).
-
